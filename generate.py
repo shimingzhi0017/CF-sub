@@ -65,6 +65,13 @@ output = {
 }
 
 with open("cf-proxies.yaml", "w", encoding="utf-8") as f:
-    yaml.dump(output, f, allow_unicode=True, sort_keys=False)
+    yaml.dump(
+        output,
+        f,
+        allow_unicode=True,
+        sort_keys=False,
+        default_flow_style=False,
+        indent=2
+    )
 
 print("生成完成")
