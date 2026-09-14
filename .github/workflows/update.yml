@@ -24,8 +24,8 @@ jobs:
         with:
           python-version: "3.x"
 
-      - name: Install Requests
-        run: pip install requests
+      - name: Install Python Packages
+        run: pip install requests pyyaml
 
       - name: Generate Config
         run: python generate.py
