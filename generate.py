@@ -2,13 +2,14 @@ import requests
 
 sources = {
 
-    "移动优选": "https://raw.githubusercontent.com/DustinWin/BestCF/main/cmcc-ip.txt",
+    "移动优选": "https://github.com/DustinWin/BestCF/releases/latest/download/cmcc-ip.txt",
 
-    "联通优选": "https://raw.githubusercontent.com/DustinWin/BestCF/main/cucc-ip.txt",
+    "联通优选": "https://github.com/DustinWin/BestCF/releases/latest/download/cucc-ip.txt",
 
-    "电信优选": "https://raw.githubusercontent.com/DustinWin/BestCF/main/ctcc-ip.txt",
+    "电信优选": "https://github.com/DustinWin/BestCF/releases/latest/download/ctcc-ip.txt",
 
-    "CF优选域名": "https://raw.githubusercontent.com/DustinWin/BestCF/main/bestcf-domain.txt"
+    "CF优选域名": "https://github.com/DustinWin/BestCF/releases/latest/download/bestcf-domain.txt"
+}
 }
 
 yaml = "proxies:\n\n"
