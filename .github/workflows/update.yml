@@ -1,0 +1,44 @@
+name: Update CF Proxy
+
+on:
+
+  workflow_dispatch:
+
+  schedule:
+    - cron: "0 */6 * * *"
+
+jobs:
+
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+
+        with:
+          python-version: "3.x"
+
+      - name: Install Requests
+        run: pip install requests
+
+      - name: Generate Config
+        run: python generate.py
+
+      - name: Commit Files
+
+        run: |
+
+          git config --local user.email "action@github.com"
+          git config --local user.name "github-actions"
+
+          git add cf-proxies.yaml
+
+          git commit -m "update cf proxies" || echo "No changes"
+
+          git push
