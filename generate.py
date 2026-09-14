@@ -26,7 +26,7 @@ for group, url in sources.items():
             if not line:
                 continue
 
-            item = line.split(",")[0].strip()
+            item = line.split("#")[0].split(",")[0].strip()
 
             count += 1
 
