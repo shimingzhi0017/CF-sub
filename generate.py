@@ -26,6 +26,7 @@ for group, url in sources.items():
             if not line:
                 continue
 
+            # 去掉 # 后面的备注
             item = line.split("#")[0].split(",")[0].strip()
 
             count += 1
@@ -42,10 +43,8 @@ for group, url in sources.items():
     skip-cert-verify: true
     servername: shimingzhi0017.xyz
     client-fingerprint: chrome
-
     ws-opts:
       path: /ABCD1234
-
       headers:
         Host: shimingzhi0017.xyz
 """
@@ -54,6 +53,7 @@ for group, url in sources.items():
                 break
 
     except Exception as e:
+
         print(f"Error processing {group}: {e}")
 
 with open("cf-proxies.yaml", "w", encoding="utf-8") as f:
