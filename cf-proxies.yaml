@@ -1,0 +1,122 @@
+proxies:
+
+
+  - name: 移动优选1
+
+    type: vless
+
+    server: 404: Not Found
+
+    port: 2083
+
+    uuid: 3384c36c-4b66-45f5-9990-736943f4b90a
+
+    network: ws
+
+    tls: true
+
+    udp: true
+
+    skip-cert-verify: true
+
+    servername: shimingzhi0017.xyz
+
+    client-fingerprint: chrome
+
+    ws-opts:
+
+      path: /ABCD1234
+
+      headers:
+        Host: shimingzhi0017.xyz
+
+
+  - name: 联通优选1
+
+    type: vless
+
+    server: 404: Not Found
+
+    port: 2083
+
+    uuid: 3384c36c-4b66-45f5-9990-736943f4b90a
+
+    network: ws
+
+    tls: true
+
+    udp: true
+
+    skip-cert-verify: true
+
+    servername: shimingzhi0017.xyz
+
+    client-fingerprint: chrome
+
+    ws-opts:
+
+      path: /ABCD1234
+
+      headers:
+        Host: shimingzhi0017.xyz
+
+
+  - name: 电信优选1
+
+    type: vless
+
+    server: 404: Not Found
+
+    port: 2083
+
+    uuid: 3384c36c-4b66-45f5-9990-736943f4b90a
+
+    network: ws
+
+    tls: true
+
+    udp: true
+
+    skip-cert-verify: true
+
+    servername: shimingzhi0017.xyz
+
+    client-fingerprint: chrome
+
+    ws-opts:
+
+      path: /ABCD1234
+
+      headers:
+        Host: shimingzhi0017.xyz
+
+
+  - name: CF优选域名1
+
+    type: vless
+
+    server: 404: Not Found
+
+    port: 2083
+
+    uuid: 3384c36c-4b66-45f5-9990-736943f4b90a
+
+    network: ws
+
+    tls: true
+
+    udp: true
+
+    skip-cert-verify: true
+
+    servername: shimingzhi0017.xyz
+
+    client-fingerprint: chrome
+
+    ws-opts:
+
+      path: /ABCD1234
+
+      headers:
+        Host: shimingzhi0017.xyz
+
