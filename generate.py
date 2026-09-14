@@ -1,5 +1,4 @@
 import requests
-import yaml
 
 sources = {
     "移动优选": "https://github.com/DustinWin/BestCF/releases/latest/download/cmcc-ip.txt",
@@ -8,7 +7,7 @@ sources = {
     "CF优选域名": "https://github.com/DustinWin/BestCF/releases/latest/download/bestcf-domain.txt"
 }
 
-proxies = []
+lines_out = ["proxies:"]
 
 for group, url in sources.items():
 
@@ -31,27 +30,9 @@ for group, url in sources.items():
 
             count += 1
 
-            proxy = {
-                "name": f"{group}{count}",
-                "type": "vless",
-                "server": item,
-                "port": 2083,
-                "uuid": "3384c36c-4b66-45f5-9990-736943f4b90a",
-                "network": "ws",
-                "tls": True,
-                "udp": True,
-                "skip-cert-verify": True,
-                "servername": "shimingzhi0017.xyz",
-                "client-fingerprint": "chrome",
-                "ws-opts": {
-                    "path": "/ABCD1234",
-                    "headers": {
-                        "Host": "shimingzhi0017.xyz"
-                    }
-                }
-            }
+            proxy = f'''  - {{name: {group}{count}, server: {item}, port: 2083, type: vless, uuid: 3384c36c-4b66-45f5-9990-736943f4b90a, tls: true, skip-cert-verify: true, servername: shimingzhi0017.xyz, client-fingerprint: chrome, network: ws, ws-opts: {{path: /ABCD1234, headers: {{Host: shimingzhi0017.xyz}}}}, udp: true}}'''
 
-            proxies.append(proxy)
+            lines_out.append(proxy)
 
             if count >= 5:
                 break
@@ -60,18 +41,8 @@ for group, url in sources.items():
 
         print(f"Error processing {group}: {e}")
 
-output = {
-    "proxies": proxies
-}
-
 with open("cf-proxies.yaml", "w", encoding="utf-8") as f:
-    yaml.dump(
-        output,
-        f,
-        allow_unicode=True,
-        sort_keys=False,
-        default_flow_style=False,
-        indent=2
-    )
+
+    f.write("\n".join(lines_out))
 
 print("生成完成")
